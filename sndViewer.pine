@@ -16,8 +16,11 @@ expandedZoneShow = input.bool(defval = true, title = "Expanded zones", group = "
 imbalanceShow = input.bool(defval = true, title = "Imbalances", group = "General settings")
 
 // Styling settings
-colorImbalance = input.color(color.new(#9598a1, 50), title = "Imbalances", group = "Styling settings")
-colorStructure = input.color(#2a2e39, title = "Structure", group = "Styling settings")
+imbalanceColor = input.color(color.new(#9598a1, 50), title = "Imbalances", group = "Styling settings", inline = "imbalances")
+imbalanceStyle = input.string(defval = "Solid / Dashed", options = ["Solid", "Dashed", "Solid / Dashed"], title = "", group = "Styling settings", inline = "imbalances")
+structureColor = input.color(#2a2e39, title = "Structure", group = "Styling settings", inline = "structure")
+structureStyle = input.string(defval = "Solid", options = ["Solid", "Dashed", "Dotted"], title = "", group = "Styling settings", inline = "structure")
+structurePosition = input.string(defval = "Top", options = ["Top", "Middle", "Bottom"], title = "", group = "Styling settings", inline = "structure")
 colorBullish = input.color(color.new(#b2b5be, 80), title = "Zones", inline = "zones", group = "Styling settings")
 colorBearish = input.color(color.new(#81a2c2, 80), title = "", inline = "zones", group = "Styling settings")
 
