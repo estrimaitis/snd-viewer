@@ -7,7 +7,7 @@ indicator("SND Viewer", overlay = true, max_bars_back = 500, max_labels_count = 
 // General settings
 timeframe = input.timeframe(defval = "15", title="Timeframe", group = "General settings")
 exhaustedZoneShow = input.bool(defval = true, title = "Exhausted zones", inline = "exhaustedZones", tooltip = "Enter 0 to show all exhausted zones.", group = "General settings")
-exhaustedZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "exhaustedZones", group = "General settings")
+exhaustedZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "exhaustedZones", tooltip = "Enter 0 to show all structure breaks.", group = "General settings")
 structureBreaksShow = input.bool(defval = true, inline = "structureBreaks", title = "Structure breaks", group = "General settings")
 structureBreaksCount = input.int(defval = 5, minval = 0, title = "", inline = "structureBreaks", group = "General settings")
 zoneSpeed = input.string(defval = "Instant", options = ["Instant", "Delayed"], title = "Zone speed", group = "General settings")
