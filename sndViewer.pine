@@ -6,14 +6,17 @@ indicator("SND Viewer", overlay = true, max_bars_back = 500, max_labels_count = 
 
 // General settings
 timeframe = input.timeframe(defval = "15", title="Timeframe", group = "General settings")
-exhaustedZoneShow = input.bool(defval = true, title = "Exhausted zones", inline = "exhaustedZones", tooltip = "Enter 0 to show all exhausted zones.", group = "General settings")
-exhaustedZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "exhaustedZones", tooltip = "Enter 0 to show all structure breaks.", group = "General settings")
-structureBreaksShow = input.bool(defval = true, inline = "structureBreaks", title = "Structure breaks", group = "General settings")
-structureBreaksCount = input.int(defval = 5, minval = 0, title = "", inline = "structureBreaks", group = "General settings")
 zoneSpeed = input.string(defval = "Instant", options = ["Instant", "Delayed"], title = "Zone speed", group = "General settings")
-activeZoneCount = input.int(defval = 5, minval = 0, title = "Active zones count", group = "General settings")
-expandedZoneShow = input.bool(defval = true, title = "Expanded zones", group = "General settings")
-imbalanceShow = input.bool(defval = true, title = "Imbalances", group = "General settings")
+expandedZoneShow = input.bool(defval = false, title = "Expanded zones" , inline = "expandedZones", group = "General settings")
+expandedZoneCount = input.int(defval = 1, minval = 1, title = "", inline = "expandedZones", group = "General settings", tooltip = "How many candles to look back for an expanded zone. 0 means as many as possible.")
+activeZoneShow = input.bool(defval = true, title = "Active zone", inline = "activeZones", tooltip = "Enter 0 to show all active zones.", group = "General settings")
+activeZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "activeZones", group = "General settings")
+exhaustedZoneShow = input.bool(defval = true, title = "Exhausted zones", inline = "exhaustedZones", tooltip = "Enter 0 to show all exhausted zones.", group = "General settings")
+exhaustedZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "exhaustedZones", tooltip = "Enter 0 to show all exhausted zones.", group = "General settings")
+structureBreaksShow = input.bool(defval = false, inline = "structureBreaks", title = "Structure breaks", group = "General settings")
+structureBreaksCount = input.int(defval = 5, minval = 0, title = "", inline = "structureBreaks", tooltip = "Enter 0 to show all structure breaks.", group = "General settings")
+imbalanceShow = input.bool(defval = false, title = "Imbalances", inline = "imbalance", tooltip = "Enter 0 to show all imbalances.", group = "General settings")
+imbalanceCount = input.int(defval = 5, minval = 0, title = "", inline = "imbalance", group = "General settings")
 
 // Styling settings
 imbalanceColor = input.color(color.new(#9598a1, 50), title = "Imbalances", group = "Styling settings", inline = "imbalances")
