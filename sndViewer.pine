@@ -1,0 +1,24 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © strimaitis
+
+//@version=5
+indicator("SND Viewer", overlay = true, max_bars_back = 500, max_labels_count = 500, max_boxes_count = 500, max_lines_count = 500)
+
+// General settings
+timeframe = input.timeframe(defval = "15", title="Timeframe", group = "General settings")
+exhaustedZoneShow = input.bool(defval = true, title = "Exhausted zones", inline = "exhaustedZones", tooltip = "Enter 0 to show all exhausted zones.", group = "General settings")
+exhaustedZoneCount = input.int(defval = 5, minval = 0, title = "", inline = "exhaustedZones", group = "General settings")
+structureBreaksShow = input.bool(defval = true, inline = "structureBreaks", title = "Structure breaks", group = "General settings")
+structureBreaksCount = input.int(defval = 5, minval = 0, title = "", inline = "structureBreaks", group = "General settings")
+zoneSpeed = input.string(defval = "Instant", options = ["Instant", "Delayed"], title = "Zone speed", group = "General settings")
+activeZoneCount = input.int(defval = 5, minval = 0, title = "Active zones count", group = "General settings")
+expandedZoneShow = input.bool(defval = true, title = "Expanded zones", group = "General settings")
+imbalanceShow = input.bool(defval = true, title = "Imbalances", group = "General settings")
+
+// Styling settings
+colorImbalance = input.color(color.new(#9598a1, 50), title = "Imbalances", group = "Styling settings")
+colorStructure = input.color(#2a2e39, title = "Structure", group = "Styling settings")
+colorBullish = input.color(color.new(#b2b5be, 80), title = "Zones", inline = "zones", group = "Styling settings")
+colorBearish = input.color(color.new(#81a2c2, 80), title = "", inline = "zones", group = "Styling settings")
+
+plot(close)
